@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>体重管理システム</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>体重管理システム</h1>
+
+  <label for="date">日付:</label>
+  <input type="date" id="date">
+
+  <label for="weight">体重 (kg):</label>
+  <input type="number" id="weight" step="0.1">
+
+  <button onclick="addEntry()">記録する</button>
+
+  <label for="goal">目標体重 (kg):</label>
+  <input type="number" id="goal" step="0.1" onchange="saveGoal()">
+
+  <p id="goalStatus"></p>
+
+  <table id="dataTable">
+    <thead>
+      <tr><th>日付</th><th>体重</th><th>操作</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <canvas id="weightChart" width="400" height="200"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
